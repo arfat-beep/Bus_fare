@@ -70,14 +70,16 @@ export default function Home() {
   const [roadEndKM, setRoadEndKM] = useState(null);
   const [totalDistance, setTotalDistance] = useState(null);
   const [busFareCost, setBusFareCost] = useState(null);
+  console.log("total distance : ", totalDistance);
+  console.log("bust Fare : ", busFareCost);
   useEffect(() => {
     const calculateBusFare = (totalDistance) => {
-      if (totalDistance <= 4) {
+      if ((totalDistance <= 4) & (totalDistance > 0)) {
         setBusFareCost(10);
       } else if (totalDistance == 5) {
         setBusFareCost(11);
       } else {
-        setBusFareCost(Math?.ceil(totalDistance * 2));
+        setBusFareCost(Math?.ceil(totalDistance * 2) + 1);
       }
     };
     calculateBusFare(totalDistance);
