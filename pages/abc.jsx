@@ -1,8 +1,4 @@
-import Head from "next/head";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import styles from "../styles/Home.module.css";
-
+import React, { useEffect, useState } from "react";
 const roads = [
   {
     name: "Karnofuli Bridge",
@@ -65,26 +61,23 @@ const roads = [
     distance: 10,
   },
 ];
-export default function Home() {
-  const [roadStartKM, setRoadStartKM] = useState(null);
-  const [roadEndKM, setRoadEndKM] = useState(null);
-  const [totalDistance, setTotalDistance] = useState(null);
-  const [busFareCost, setBusFareCost] = useState(null);
-  console.log("total distance : ", totalDistance);
-  console.log("bust Fare : ", busFareCost);
+const abc = () => {
+  const [roadStartKM, setRoadStartKM] = useState(0);
+  const [roadEndKM, setRoadEndKM] = useState(0);
+  const [totalDistance, setTotalDistance] = useState(0);
+  const [busFareCost, setBusFareCost] = useState(0);
   useEffect(() => {
     const calculateBusFare = (totalDistance) => {
-      if ((totalDistance <= 4) & (totalDistance > 0)) {
+      if ((totalDistance <= 4) & (totalDistance >= 0)) {
         setBusFareCost(10);
       } else if (totalDistance == 5) {
         setBusFareCost(11);
-      } else {
+      } else if (totalDistance > 5) {
         setBusFareCost(Math?.ceil(totalDistance * 2) + 1);
       }
     };
     calculateBusFare(totalDistance);
-  }, [totalDistance, busFareCost]);
-
+  }, [totalDistance, roadEndKM, roadStartKM]);
   const handleStartRoadInput = (e) => {
     e.preventDefault();
     const x = roads?.filter((road) => road?.value === e?.target?.start?.value);
@@ -124,4 +117,6 @@ export default function Home() {
       )}
     </div>
   );
-}
+};
+
+export default abc;
