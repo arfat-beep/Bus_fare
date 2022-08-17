@@ -493,6 +493,8 @@ export default function Home() {
       {busNumber ? (
         <div>
           ভাড়া : ৳ <strong>{busFareCost}</strong>
+          <br />
+          ছাত্র ভাড়া: ৳ <strong>{Math.ceil(busFareCost / 2)}</strong>
         </div>
       ) : (
         ""
