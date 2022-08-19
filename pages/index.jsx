@@ -414,11 +414,12 @@ export default function Home() {
     };
     calculateBusFare(totalDistance);
   }, [totalDistance]);
-  /* console.log("distance", totalDistance);
+  /*   console.log("distance", totalDistance);
   console.log("vara", busFareCost);
   console.log("calculation ", Math?.ceil(totalDistance * 2.5));
   console.log("road start", roadStartKM, "road end", roadEndKM);
   console.log("place name", placeName); */
+  
   // useState for place name
   useEffect(() => {
     let places = [];
@@ -445,12 +446,12 @@ export default function Home() {
       (road) => road?.value === e?.target?.start?.value
     );
     setRoadStartKM(x[0]?.distance);
-    console.log("x", x);
+
     const y = placeName?.filter(
       (road) => road?.value === e?.target?.end?.value
     );
     setRoadEndKM(y[0]?.distance);
-    setTotalDistance(Math?.abs(roadStartKM - roadEndKM));
+    setTotalDistance(Math?.abs(x[0]?.distance - y[0]?.distance));
   };
   return (
     <div>
