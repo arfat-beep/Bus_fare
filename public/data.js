@@ -415,7 +415,7 @@ const roads = [
   {
     road_no: "5",
     place: "",
-    name: "Tigerpass",
+    name: "Tiger Pass",
     value: "tigerpass",
     distance: 2,
   },
@@ -534,7 +534,7 @@ const roads = [
   {
     road_no: "6",
     place: "",
-    name: "Tigerpass",
+    name: "Tiger Pass",
     value: "tigerpass",
     distance: 3,
   },
@@ -737,7 +737,7 @@ const roads = [
   {
     road_no: "10",
     place: "",
-    name: "Kalurghat",
+    name: "Kalurghat Bridge",
     value: "kalurghat",
     distance: 0,
   },
@@ -891,7 +891,7 @@ const roads = [
   {
     road_no: "8",
     place: "",
-    name: "Tiger_pass",
+    name: "Tiger Pass",
     value: "tiger_pass",
     distance: 2,
   },
