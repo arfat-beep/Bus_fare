@@ -136,7 +136,7 @@ const roads = [
     road_no: "2",
     place: "",
     name: "Muradpur",
-    value: "muradput",
+    value: "muradpur",
     distance: 7,
   },
   {
@@ -240,7 +240,7 @@ const roads = [
   {
     road_no: "3",
     place: "",
-    name: "Two Number Gate",
+    name: "2 Number Gate",
     value: "two_number_gate",
     distance: 3.5,
   },
@@ -310,8 +310,8 @@ const roads = [
   {
     road_no: "4",
     place: "",
-    name: "Wasa More",
-    value: "wasa_more",
+    name: "Wasa",
+    value: "wasa",
     distance: 3,
   },
   {
@@ -359,15 +359,15 @@ const roads = [
   {
     road_no: "4",
     place: "",
-    name: "Fokirhat Over Bridge",
-    value: "fokirhat_over_bridge",
+    name: "Fokir Hat Bridge",
+    value: "fokir_hat_bridge",
     distance: 11,
   },
   {
     road_no: "4",
     place: "",
-    name: "Fouzderhat",
-    value: "fouzderhat",
+    name: "Fouzdarhat",
+    value: "fouzdarhat",
     distance: 12,
   },
   {
@@ -416,7 +416,7 @@ const roads = [
     road_no: "5",
     place: "",
     name: "Tiger Pass",
-    value: "tigerpass",
+    value: "tiger_pass",
     distance: 2,
   },
   {
@@ -535,7 +535,7 @@ const roads = [
     road_no: "6",
     place: "",
     name: "Tiger Pass",
-    value: "tigerpass",
+    value: "tiger_pass",
     distance: 3,
   },
   {
@@ -611,7 +611,7 @@ const roads = [
   {
     road_no: "6",
     place: "",
-    name: "Katgor Rifainary Gate",
+    name: "Katgor Refinary Gate",
     value: "katgor_rifainary_gate",
     distance: 13.6,
   },
@@ -625,8 +625,8 @@ const roads = [
   {
     road_no: "7",
     place: "",
-    name: "Kotoyali More",
-    value: "kotoyali_more",
+    name: "Kotwali More",
+    value: "kotwali_more",
     distance: 0,
   },
   {
@@ -744,8 +744,8 @@ const roads = [
   {
     road_no: "10",
     place: "",
-    name: "Ispahani Mosque",
-    value: "ispahani_mosque",
+    name: "Ispahani Mosjid",
+    value: "ispahani_mosjid",
     distance: 1,
   },
   {
@@ -863,8 +863,8 @@ const roads = [
   {
     road_no: "10",
     place: "",
-    name: "Katgor Refinary Colony Gate",
-    value: "Katgor_refinary_colony_gate",
+    name: "Katgor Refinary Gate",
+    value: "katgor_rifainary_gate",
     distance: 22,
   },
   {
@@ -898,15 +898,15 @@ const roads = [
   {
     road_no: "8",
     place: "",
-    name: "Wasa More",
-    value: "wasa_more",
+    name: "Wasa",
+    value: "wasa",
     distance: 3,
   },
   {
     road_no: "8",
     place: "",
-    name: "Sholoshor",
-    value: "sholoshor",
+    name: "Sholoshor Rail Station",
+    value: "sholoshor_rail_station",
     distance: 4,
   },
   {

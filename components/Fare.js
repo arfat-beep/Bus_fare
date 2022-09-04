@@ -74,7 +74,7 @@ console.log("place name", placeName); */
             name="bus_number"
             className="select select-bordered w-full max-w-xs"
           >
-            <option disabled defaultValue>
+            <option disabled selected>
               Pick one
             </option>
             {selectBusNumberArr.map((busNumber, index) => (
