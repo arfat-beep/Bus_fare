@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Select from "react-select";
 import roads from "../public/data";
 
 const PlaceFare = () => {
@@ -15,13 +16,17 @@ const PlaceFare = () => {
       places = [...places, road.name];
     }
   });
+  const options = places.map((place) => {
+    return { value: place, label: place };
+  });
   places = places.sort();
   const handleSubmit = (e) => {
     e.preventDefault();
     const start = e.target.start_point.value;
     const end = e.target.end_point.value;
+    console.log(typeof start, end);
     let hash = [];
-    if (start !== "Pick one" && end !== "Pick one") {
+    if (start && end) {
       roads.map((road) => {
         if (road.name === start) {
           roads.map((route) => {
@@ -48,13 +53,14 @@ const PlaceFare = () => {
     });
     setSelectedRoad(tempRoad);
   };
+
   return (
     <div className="max-w-lg bg-gray-200 p-5 rounded-md mt-10 ">
       <form onSubmit={handleSubmit}>
         <label className="label">
           <span className="label-text">Select start point</span>
         </label>
-        <select
+        {/* <select
           name="start_point"
           className="select select-bordered w-full max-w-xs"
         >
@@ -66,11 +72,12 @@ const PlaceFare = () => {
               {place}
             </option>
           ))}
-        </select>
+        </select> */}
+        <Select name="start_point" options={options} />
         <label className="label">
           <span className="label-text">Select end point</span>
         </label>
-        <select
+        {/* <select
           name="end_point"
           className="select select-bordered w-full max-w-xs"
         >
@@ -82,19 +89,23 @@ const PlaceFare = () => {
               {place}
             </option>
           ))}
-        </select>
+        </select> */}
+
+        <Select name="end_point" options={options} />
         {pickError && (
           <p style={{ color: "red" }}>Please Select Start and end place</p>
         )}
         <input className="btn btn-success my-5" type="submit" value="submit" />
       </form>
-      {selectedRoad && (
+      {selectedRoad[0] ? (
         <span>
           apni jesob bus e kore jete parben:{" "}
           {selectedRoad.map((selectRoad, index) => (
             <span key={index}>{selectRoad} ,</span>
           ))}
         </span>
+      ) : (
+        ""
       )}
       {/* {places && places.map((place, index) => <li key={index}>{place}</li>)} */}
     </div>
