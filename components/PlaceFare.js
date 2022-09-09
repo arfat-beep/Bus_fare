@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 import roads from "../public/data";
-
+const { toBengaliNumber } = require("bengali-number");
 const PlaceFare = () => {
   const [pickError, setPickError] = useState(false);
   const [selectedRoad, setSelectedRoad] = useState([]);
@@ -16,7 +16,7 @@ const PlaceFare = () => {
       places = [...places, road.name];
     }
   });
-  const options = places.map((place) => {
+  const options = places.sort().map((place) => {
     return { value: place, label: place };
   });
   places = places.sort();
@@ -24,7 +24,6 @@ const PlaceFare = () => {
     e.preventDefault();
     const start = e.target.start_point.value;
     const end = e.target.end_point.value;
-    console.log(typeof start, end);
     let hash = [];
     if (start && end) {
       roads.map((road) => {
@@ -46,9 +45,11 @@ const PlaceFare = () => {
     }
     let tempRoad = [];
     hash.map((road) => {
-      const temp = tempRoad.find((selectRoad) => selectRoad == road.road_no);
+      const temp = tempRoad.find(
+        (selectRoad) => selectRoad == toBengaliNumber(road.road_no)
+      );
       if (!temp) {
-        tempRoad = [...tempRoad, road.road_no];
+        tempRoad = [...tempRoad, toBengaliNumber(road.road_no)];
       }
     });
     setSelectedRoad(tempRoad);
@@ -60,36 +61,11 @@ const PlaceFare = () => {
         <label className="label">
           <span className="label-text">Select start point</span>
         </label>
-        {/* <select
-          name="start_point"
-          className="select select-bordered w-full max-w-xs"
-        >
-          <option disabled selected>
-            Pick one
-          </option>
-          {places.map((place, index) => (
-            <option value={place} key={index}>
-              {place}
-            </option>
-          ))}
-        </select> */}
+
         <Select name="start_point" options={options} />
         <label className="label">
           <span className="label-text">Select end point</span>
         </label>
-        {/* <select
-          name="end_point"
-          className="select select-bordered w-full max-w-xs"
-        >
-          <option disabled selected>
-            Pick one
-          </option>
-          {places.map((place, index) => (
-            <option value={place} key={index}>
-              {place}
-            </option>
-          ))}
-        </select> */}
 
         <Select name="end_point" options={options} />
         {pickError && (

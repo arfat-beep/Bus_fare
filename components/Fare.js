@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import roads from "../public/data";
+const { toBengaliNumber, toBengaliWord } = require("bengali-number");
 const Fare = () => {
   const selectBusNumberArr = ["1", "2", "3", "4", "5", "6", "7", "8", "10"];
 
@@ -121,9 +122,10 @@ console.log("place name", placeName); */
       )}
       {busNumber ? (
         <div>
-          ভাড়া : ৳ <strong>{busFareCost}</strong>
+          ভাড়া : ৳ <strong>{toBengaliNumber(busFareCost)}</strong>
           <br />
-          ছাত্র ভাড়া: ৳ <strong>{Math.ceil(busFareCost / 2)}</strong>
+          ছাত্র ভাড়া: ৳{" "}
+          <strong>{toBengaliNumber(Math.ceil(busFareCost / 2))}</strong>
         </div>
       ) : (
         ""
